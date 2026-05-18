@@ -716,7 +716,6 @@ else
             },
           },
         }
-
         -- Ensure the servers and tools above are installed
         --
         -- To check the current status of installed tools and/or manually install
@@ -733,6 +732,10 @@ else
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
           'stylua', -- Used to format Lua code
+          'ruff', -- Used to format Python code with ruff
+          'prettier',
+          'black', -- Used to format Python code with black
+          'yaml-language-server',
         })
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -783,7 +786,8 @@ else
           python = { 'ruff_format', 'black' },
           --
           -- You can use 'stop_after_first' to run the first available formatter from the list
-          javascript = { 'prettier', 'prettier', stop_after_first = true },
+          javascript = { 'prettier', stop_after_first = true },
+          yaml = { 'prettier', stop_after_first = true },
         },
       },
     },
