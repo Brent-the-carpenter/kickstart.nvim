@@ -44,22 +44,18 @@ local colors = {
 }
 
 -- Helper function to set highlight groups
-local function hl(group, opts)
-  vim.api.nvim_set_hl(0, group, opts)
-end
+local function hl(group, opts) vim.api.nvim_set_hl(0, group, opts) end
 
 --Clear existing highlights
 vim.cmd 'highlight clear'
-if vim.fn.exists 'syntax_on' == 1 then
-  vim.cmd 'syntax reset'
-end
+if vim.fn.exists 'syntax_on' == 1 then vim.cmd 'syntax reset' end
 
 vim.o.background = 'dark'
 vim.g.colors_name = 'subliminal'
 
 -- Editor
 hl('Normal', { fg = colors.fg, bg = colors.bg })
-hl('NormalFloat', { fg = colors.fg, bg = colors.bg_lighter })
+hl('NormalFloat', { fg = colors.fg, bg = colors.bg })
 hl('FloatBorder', { fg = colors.blue_gray, bg = colors.bg_light })
 hl('Cursor', { fg = colors.bg, bg = colors.amber })
 hl('CursorLine', { bg = colors.bg_light })

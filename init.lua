@@ -279,7 +279,7 @@ else
     -- Then, because we use the `opts` key (recommended), the configuration runs
     -- after the plugin has been loaded as `require(MODULE).setup(opts)`.
 
-    { -- Useful plugin to show you pending keybinds.
+    {                     -- Useful plugin to show you pending keybinds.
       'folke/which-key.nvim',
       event = 'VimEnter', -- Sets the loading event to 'VimEnter'
 
@@ -478,7 +478,7 @@ else
         'WhoIsSethDaniel/mason-tool-installer.nvim',
 
         -- Useful status updates for LSP.
-        { 'j-hui/fidget.nvim', opts = {} },
+        { 'j-hui/fidget.nvim',       opts = {} },
 
         -- Allows extra capabilities provided by nvim-cmp
         'hrsh7th/cmp-nvim-lsp',
@@ -984,7 +984,7 @@ else
         vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
         vim.opt.foldenable = true
         vim.opt.foldlevelstart = 99 -- Start with all folds open
-        vim.opt.foldnestmax = 3 -- Limit nested folds
+        vim.opt.foldnestmax = 3     -- Limit nested folds
       end,
 
       -- There are additional nvim-treesitter modules that you can use to interact
